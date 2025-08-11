@@ -16,7 +16,11 @@ public final class ContactListViewModel: NSObject {
 
     public var numberOfItems: Int { filteredContacts.count }
 
-    public init(store: ContactStore = UserDefaultsContactStore()) {
+    public convenience override init() {
+        self.init(store: UserDefaultsContactStore())
+    }
+
+    public init(store: ContactStore) {
         self.store = store
         super.init()
     }
@@ -40,6 +44,11 @@ public final class ContactListViewModel: NSObject {
         guard let contact = item(at: index) else { return }
         store.delete(contact)
         load()
+    }
+
+    public func updateQuery(_ newQuery: String) {
+        query = newQuery
+        applyFilter()
     }
 
     private func applyFilter() {
