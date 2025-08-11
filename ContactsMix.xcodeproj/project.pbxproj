@@ -39,11 +39,22 @@
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		17CAF7B12E4A86B0003F25E3 /* Exceptions for "ContactsMix" folder in "Compile Sources" phase from "ContactsMix" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 17595CED2E4A535D0023E98B /* Sources */;
+			membershipExceptions = (
+				"ContactsMix-Bridging-Header.h",
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		17595CF32E4A535D0023E98B /* ContactsMix */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				17595D1E2E4A535E0023E98B /* Exceptions for "ContactsMix" folder in "ContactsMix" target */,
+				17CAF7B12E4A86B0003F25E3 /* Exceptions for "ContactsMix" folder in "Compile Sources" phase from "ContactsMix" target */,
 			);
 			path = ContactsMix;
 			sourceTree = "<group>";
