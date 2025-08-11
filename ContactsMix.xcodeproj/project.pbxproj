@@ -33,7 +33,7 @@
 		17595D1E2E4A535E0023E98B /* Exceptions for "ContactsMix" folder in "ContactsMix" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Resources/Info.plist,
 			);
 			target = 17595CF02E4A535D0023E98B /* ContactsMix */;
 		};
@@ -187,6 +187,7 @@
 				TargetAttributes = {
 					17595CF02E4A535D0023E98B = {
 						CreatedOnToolsVersion = 16.2;
+						LastSwiftMigration = 1620;
 					};
 					17595D0B2E4A535E0023E98B = {
 						CreatedOnToolsVersion = 16.2;
@@ -286,11 +287,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 64V6C3ZR54;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ContactsMix/Info.plist;
+				INFOPLIST_FILE = ContactsMix/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -304,6 +306,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.abrahamduran.ContactsMix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -313,11 +317,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 64V6C3ZR54;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ContactsMix/Info.plist;
+				INFOPLIST_FILE = ContactsMix/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -331,6 +336,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.abrahamduran.ContactsMix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
