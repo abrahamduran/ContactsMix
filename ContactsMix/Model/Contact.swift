@@ -11,15 +11,15 @@ import Foundation
 public final class Contact: NSObject, NSSecureCoding, Identifiable {
     public static let supportsSecureCoding = true
 
-    let identifier: String
-    var firstName: String
-    var lastName: String
-    var phone: String
-    var imageUrl: String?
+    public let identifier: String
+    public var firstName: String
+    public var lastName: String
+    public var phone: String
+    public var imageUrl: String?
 
-    var fullName: String { "\(firstName) \(lastName)" }
+    public var fullName: String { "\(firstName) \(lastName)" }
 
-    init(identifier: String = UUID().uuidString, firstName: String, lastName: String, phone: String, imageUrl: String? = nil) {
+    public init(identifier: String = UUID().uuidString, firstName: String, lastName: String, phone: String, imageUrl: String? = nil) {
         self.identifier = identifier
         self.firstName = firstName
         self.lastName = lastName
