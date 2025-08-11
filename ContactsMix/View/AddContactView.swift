@@ -13,47 +13,61 @@ struct AddContactView: View {
     let onSave: (Contact) -> Void
 
     var body: some View {
-        Form {
-            Section("Foto") {
-                if let image = viewModel.imageUrl, let url = URL(string: image) {
-                    AsyncImage(url: url) { phase in
-                        switch phase {
-                            case .empty:
-                                ProgressView()
-                                    .frame(maxWidth: .infinity)
-                            case .success(let image):
-                                image.resizable().scaledToFill()
-                            case .failure:
-                                Text("Error cargando imagen")
-                                    .frame(height: 200)
-                                    .background(.gray)
-                            @unknown default:
-                                EmptyView()
-                        }
-                    }
-                    .frame(height: 200)
-                    .clipped()
-                    .cornerRadius(8)
-                } else {
-                    Color.gray.opacity(0.2).frame(height: 200).overlay(Text("Sin foto"))
-                }
-                
-                Button("Cargar foto aleatoria") { viewModel.loadRandomImage() }
+        NavigationStack {
+            Form {
+                photoSection
+
+                generalInfoSection
             }
-
-            Section("Datos") {
-                TextField("Nombre", text: $viewModel.firstName)
-                    .textContentType(.givenName)
-
-                TextField("Apellido", text: $viewModel.lastName)
-                    .textContentType(.familyName)
-
-                TextField("Nombre", text: $viewModel.phone)
-                    .textContentType(.telephoneNumber)
-                    .keyboardType(.phonePad)
-            }
+            .toolbar { toolbar }
         }
-        .toolbar { toolbar }
+    }
+
+    private var photoSection: some View {
+        Section("Foto") {
+            if let image = viewModel.imageUrl, let url = URL(string: image) {
+                AsyncImage(url: url) { phase in
+                    switch phase {
+                        case .empty:
+                            ProgressView()
+                                .frame(maxWidth: .infinity)
+                        case .success(let image):
+                            image.resizable().scaledToFill()
+                        case .failure:
+                            Text("Error cargando imagen")
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 200)
+                                .background(.gray)
+                        @unknown default:
+                            EmptyView()
+                    }
+                }
+                .frame(height: 200)
+                .clipped()
+                .cornerRadius(8)
+            } else {
+                Color.gray
+                    .opacity(0.2)
+                    .frame(height: 200)
+                    .overlay(Text("Sin foto"))
+            }
+
+            Button("Cargar foto aleatoria") { viewModel.loadRandomImage() }
+        }
+    }
+
+    private var generalInfoSection: some View {
+        Section("Datos") {
+            TextField("Nombre", text: $viewModel.firstName)
+                .textContentType(.givenName)
+
+            TextField("Apellido", text: $viewModel.lastName)
+                .textContentType(.familyName)
+
+            TextField("Nombre", text: $viewModel.phone)
+                .textContentType(.telephoneNumber)
+                .keyboardType(.phonePad)
+        }
     }
 
     @ToolbarContentBuilder
