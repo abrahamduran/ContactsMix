@@ -64,7 +64,7 @@ struct AddContactView: View {
             TextField("Apellido", text: $viewModel.lastName)
                 .textContentType(.familyName)
 
-            TextField("Nombre", text: $viewModel.phone)
+            TextField("Teléfono", text: $viewModel.phone)
                 .textContentType(.telephoneNumber)
                 .keyboardType(.phonePad)
         }
